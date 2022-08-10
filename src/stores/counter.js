@@ -1,16 +1,14 @@
-import { defineStore } from 'pinia'
+import { createStore } from "vuex";
 
-export const useCounterStore = defineStore({
-  id: 'counter',
-  state: () => ({
+export const store = createStore({
+  state: {
     counter: 0
-  }),
-  getters: {
-    doubleCount: (state) => state.counter * 2
+  },
+  mutations: {
+    decrement: state => state.counter--,
+    increment: state => state.counter++
   },
   actions: {
-    increment() {
-      this.counter++
-    }
-  }
+
+  },
 })
